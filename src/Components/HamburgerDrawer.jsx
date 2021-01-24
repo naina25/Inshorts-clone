@@ -66,7 +66,7 @@ export default function HamburgerDrawer({ setCategory }) {
       <List>
         {categories.map((text, index) => (
           <ListItem
-            style={{ height: 40, borderRadius: 3 }}
+            style={{ height: 40, borderRadius: 3, textTransform: "capitalize" }}
             button
             onClick={() => setCategory(text)}
             key={text}>
