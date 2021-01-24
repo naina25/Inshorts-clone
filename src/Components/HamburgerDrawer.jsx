@@ -12,17 +12,20 @@ import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 import MenuIcon from "@material-ui/icons/Menu";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core";
+import categories from "../data/category";
 
 const useStyles = makeStyles({
   list: {
-    width: 250,
+    width: 200,
+    paddingLeft: 10,
+    paddingRight: 5,
   },
   fullList: {
     width: "auto",
   },
 });
 
-export default function HamburgerDrawer() {
+export default function HamburgerDrawer({ setCategory }) {
   const classes = useStyles();
   const [state, setState] = React.useState({
     left: false,
@@ -57,22 +60,16 @@ export default function HamburgerDrawer() {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}>
       <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+        <ListItem>Categories</ListItem>
       </List>
       <Divider />
       <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
+        {categories.map((text, index) => (
+          <ListItem
+            style={{ height: 40, borderRadius: 3 }}
+            button
+            onClick={() => setCategory(text)}
+            key={text}>
             <ListItemText primary={text} />
           </ListItem>
         ))}
