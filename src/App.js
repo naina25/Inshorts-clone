@@ -13,15 +13,16 @@ function App() {
       const fetchedData = await axios.get(
         `https://saurav.tech/NewsAPI/top-headlines/category/${category}/in.json`
       );
-      console.log(fetchedData);
       setNews(fetchedData.data.articles);
+      setNews((newsState) => {
+        console.log(newsState);
+        return newsState;
+      });
       setTotalNewsCount(fetchedData.data.totalResults);
     } catch (error) {
       console.log(error);
     }
   };
-
-  console.log(totalNewsCount);
 
   useEffect(() => {
     newsApi();
