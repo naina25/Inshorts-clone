@@ -6,10 +6,7 @@ import Button from "@material-ui/core/Button";
 import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
 import MenuIcon from "@material-ui/icons/Menu";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core";
 import categories from "../data/category";
@@ -31,12 +28,14 @@ export default function HamburgerDrawer({ setCategory }) {
     left: false,
   });
 
-  const theme = React.useMemo(() =>
-    createMuiTheme({
-      palette: {
-        type: "dark",
-      },
-    })
+  const theme = React.useMemo(
+    () =>
+      createMuiTheme({
+        palette: {
+          type: "dark",
+        },
+      }),
+    []
   );
 
   const toggleDrawer = (anchor, open) => (event) => {

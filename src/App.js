@@ -9,30 +9,30 @@ function App() {
   const [category, setCategory] = useState("general");
   const [news, setNews] = useState([]);
   const [totalNewsCount, setTotalNewsCount] = useState("");
-  const newsApi = async () => {
-    try {
-      const fetchedData = await axios.get(
-        `https://saurav.tech/NewsAPI/top-headlines/category/${category}/in.json`
-      );
-      setNews(fetchedData.data.articles);
-      setNews((newsState) => {
-        console.log(newsState);
-        return newsState;
-      });
-      setTotalNewsCount(fetchedData.data.totalResults);
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   useEffect(() => {
+    const newsApi = async () => {
+      try {
+        const fetchedData = await axios.get(
+          `https://saurav.tech/NewsAPI/top-headlines/category/${category}/in.json`
+        );
+        setNews(fetchedData.data.articles);
+        setNews((newsState) => {
+          console.log(newsState);
+          return newsState;
+        });
+        setTotalNewsCount(fetchedData.data.totalResults);
+      } catch (error) {
+        console.log(error);
+      }
+    };
     newsApi();
   }, [category, totalNewsCount]);
 
   return (
     <div className="App">
       <NavInshorts setCategory={setCategory} />
-      <Newscontent />
+      <Newscontent news={news} totalNewsCount={totalNewsCount} />
       <Footer />
     </div>
   );

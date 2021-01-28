@@ -1,8 +1,9 @@
 import { Container } from "@material-ui/core";
 import React from "react";
+import NewsCard from "./NewsCard";
 import "./Newscontent.css";
 
-const Newscontent = () => {
+const Newscontent = ({ news, totalNewsCount }) => {
   return (
     <Container maxWidth="md">
       <div className="content">
@@ -21,6 +22,9 @@ const Newscontent = () => {
             height="80%"
           />
         </div>
+        {news.map((newsItem, index) => (
+          <NewsCard newsItem={newsItem} key={newsItem.title} />
+        ))}
       </div>
     </Container>
   );
