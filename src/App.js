@@ -9,6 +9,7 @@ function App() {
   const [category, setCategory] = useState("general");
   const [news, setNews] = useState([]);
   const [totalNewsCount, setTotalNewsCount] = useState("");
+  const [loadMore, setLoadMore] = useState(20);
 
   useEffect(() => {
     const newsApi = async () => {
@@ -31,8 +32,13 @@ function App() {
 
   return (
     <div className="App">
-      <NavInshorts setCategory={setCategory} />
-      <Newscontent news={news} totalNewsCount={totalNewsCount} />
+      <NavInshorts setCategory={setCategory} setLoadMore={setLoadMore} />
+      <Newscontent
+        loadMore={loadMore}
+        setLoadMore={setLoadMore}
+        news={news}
+        totalNewsCount={totalNewsCount}
+      />
       <Footer />
     </div>
   );

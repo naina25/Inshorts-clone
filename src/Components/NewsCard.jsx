@@ -11,22 +11,16 @@ const NewsCard = ({ newsItem }) => {
     switch (day) {
       case "Mon":
         return "Monday";
-        break;
       case "Tue":
         return "Tuesday";
-        break;
       case "Wed":
         return "Wednesday";
-        break;
       case "Thu":
         return "Thursday";
-        break;
       case "Fri":
         return "Friday";
-        break;
       case "Sat":
         return "Saturday";
-        break;
 
       default:
         break;

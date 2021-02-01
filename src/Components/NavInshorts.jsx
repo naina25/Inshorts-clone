@@ -2,11 +2,11 @@ import React from "react";
 import HamburgerDrawer from "./HamburgerDrawer";
 import "./NavInshorts.css";
 
-const NavInshorts = ({ setCategory }) => {
+const NavInshorts = ({ setCategory, setLoadMore }) => {
   return (
     <div className="nav">
       <div className="hamicon">
-        <HamburgerDrawer setCategory={setCategory} />
+        <HamburgerDrawer setCategory={setCategory} setLoadMore={setLoadMore} />
       </div>
       <img
         src="https://assets.inshorts.com/website_assets/images/logo_inshorts.png"

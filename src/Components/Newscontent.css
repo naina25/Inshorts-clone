@@ -1,10 +1,15 @@
+.containerDiv {
+  padding-top: 20px;
+}
+
 .downloadMessage {
   background: #f44336;
-  width: "95%";
+  width: 95%;
   display: flex;
   align-items: center;
   height: 48px;
-  padding: 0 40px;
+  font-weight: 300;
+  padding: 0 33px;
   margin: 20px 0 35px 0;
   color: white;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
@@ -18,4 +23,34 @@
   .downloadMessage {
     display: none;
   }
+}
+
+.loadMore {
+  width: 130px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  background-color: white;
+  border: none;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  padding: 6px 25px;
+  font-size: 1em;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.4;
+  font-weight: 400;
+  margin: 32px auto;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -khtml-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+}
+
+.loadMore:focus {
+  outline: none;
+}
+
+.loadMore:hover {
+  transition: box-shadow 0.25s;
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
